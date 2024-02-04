@@ -40,7 +40,7 @@ class Grid:
                 if cell == value:
                     line += cell_character_dict[value] + ' '
 
-            if (len(line)) % self.width == 0:
+            if (len(line) / 2) % self.width == 0:
                 if line_count >= 10:
                     line_count = 0
                 screen += ' \n' + str(line_count) + '|' + line

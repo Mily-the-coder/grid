@@ -38,10 +38,10 @@ class Grid:
         for cell in self.grid.values():
             for value in cell_character_dict.keys():
                 if cell == value:
-                    line += f"{cell_character_dict[value]}"
+                    line += cell_character_dict[value] + ' '
 
             if (len(line) / 2) % self.width == 0:
-                if line_count >= 9:
+                if line_count >= 10:
                     line_count = 0
                 screen += ' \n' + str(line_count) + '|' + line
                 line_count += 1
