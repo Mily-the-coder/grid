@@ -3,10 +3,11 @@ import os
 
 
 class Grid:
-    def __init__(self, width: int, height: int, default: int):
+    def __init__(self, width: int, height: int, default: int, extra: dict):
         self.width = width
         self.height = height
         self.default = default
+        self.extra = extra
 
         self.grid = {(x+1, y+1): self.default for x in range(self.width) for y in range(self.height)}
 
