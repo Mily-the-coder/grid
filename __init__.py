@@ -7,7 +7,7 @@ class Grid:
         self.width = width
         self.height = height
         self.default = default
-        self.extra = extra
+        self.extra = dict()
 
         self.grid = {(x + 1, y + 1): self.default for x in range(self.width) for y in range(self.height)}
 
@@ -21,7 +21,7 @@ class Grid:
     def getGrid(self):
         return self.grid
 
-    def getExtra(self, key: None):
+    def getExtra(self, key):
         if key is None:
             return self.extra
         else:
