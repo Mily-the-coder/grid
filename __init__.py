@@ -3,7 +3,7 @@ import os
 
 
 class Grid:
-    def __init__(self, width: int, height: int, default: int, extra: dict):
+    def __init__(self, width: int, height: int, default: int):
         self.width = width
         self.height = height
         self.default = default
@@ -66,23 +66,23 @@ class Grid:
 
         if pos[0] != 1:
             if pos[1] != 1:
-                nw = self.grid[(pos[0] - 1, pos[1] - 1)]
-            n = self.grid[(pos[0] - 1, pos[1])]
+                nw = self.grid[(pos[0]-1, pos[1]-1)]
+            n = self.grid[(pos[0]-1, pos[1])]
             if pos[1] != self.width:
-                ne = self.grid[(pos[0] - 1, pos[1] + 1)]
+                ne = self.grid[(pos[0]-1, pos[1] + 1)]
 
         if pos[1] != 1:
-            w = self.grid[(pos[0], pos[1] - 1)]
+            w = self.grid[(pos[0], pos[1]-1)]
 
         if pos[1] != self.width:
-            e = self.grid[(pos[0], pos[1] + 1)]
+            e = self.grid[(pos[0], pos[1]+1)]
 
         if pos[0] != self.height:
-            s = self.grid[(pos[0] + 1, pos[1])]
+            s = self.grid[(pos[0]+1, pos[1])]
             if pos[1] != 1:
                 sw = self.grid[(pos[0] + 1, pos[1] - 1)]
             if pos[1] != self.width:
-                se = self.grid[(pos[0] + 1, pos[1] + 1)]
+                se = self.grid[(pos[0]+1, pos[1]+1)]
 
         if not immediate:
             slot_neighbors = {
