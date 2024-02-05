@@ -21,7 +21,7 @@ class Grid:
     def getGrid(self):
         return self.grid
 
-    def getExtra(self, key):
+    def getExtra(self, key: None):
         if key is None:
             return self.extra
         else:

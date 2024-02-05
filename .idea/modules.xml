@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/grid.iml" filepath="$PROJECT_DIR$/.idea/grid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../waveFunctionCollapse/.idea/waveFunctionCollapse.iml" filepath="$PROJECT_DIR$/../../waveFunctionCollapse/.idea/waveFunctionCollapse.iml" />
     </modules>
   </component>
 </project>
