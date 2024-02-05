@@ -18,6 +18,15 @@ class Grid:
         for i in items_pos_value_dict:
             self.grid[i] = items_pos_value_dict[i]
 
+    def getGrid(self):
+        return self.grid
+
+    def getExtra(self):
+        return self.extra
+
+    def setExtra(self, key, value):
+        self.extra[key] = value
+
     def getCell(self, item_pos_tuple):
         return self.grid[item_pos_tuple]
 

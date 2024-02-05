@@ -9,7 +9,7 @@ class Grid:
         self.default = default
         self.extra = extra
 
-        self.grid = {(x+1, y+1): self.default for x in range(self.width) for y in range(self.height)}
+        self.grid = {(x + 1, y + 1): self.default for x in range(self.width) for y in range(self.height)}
 
     def setCell(self, item_pos_tuple, value):
         self.grid[item_pos_tuple] = value
@@ -17,6 +17,15 @@ class Grid:
     def setCells(self, items_pos_value_dict):
         for i in items_pos_value_dict:
             self.grid[i] = items_pos_value_dict[i]
+
+    def getGrid(self):
+        return self.grid
+
+    def getExtra(self):
+        return self.extra
+
+    def setExtra(self, key, value):
+        self.extra[key] = value
 
     def getCell(self, item_pos_tuple):
         return self.grid[item_pos_tuple]
@@ -57,23 +66,23 @@ class Grid:
 
         if pos[0] != 1:
             if pos[1] != 1:
-                nw = self.grid[(pos[0]-1, pos[1]-1)]
-            n = self.grid[(pos[0]-1, pos[1])]
+                nw = self.grid[(pos[0] - 1, pos[1] - 1)]
+            n = self.grid[(pos[0] - 1, pos[1])]
             if pos[1] != self.width:
-                ne = self.grid[(pos[0]-1, pos[1] + 1)]
+                ne = self.grid[(pos[0] - 1, pos[1] + 1)]
 
         if pos[1] != 1:
-            w = self.grid[(pos[0], pos[1]-1)]
+            w = self.grid[(pos[0], pos[1] - 1)]
 
         if pos[1] != self.width:
-            e = self.grid[(pos[0], pos[1]+1)]
+            e = self.grid[(pos[0], pos[1] + 1)]
 
         if pos[0] != self.height:
-            s = self.grid[(pos[0]+1, pos[1])]
+            s = self.grid[(pos[0] + 1, pos[1])]
             if pos[1] != 1:
                 sw = self.grid[(pos[0] + 1, pos[1] - 1)]
             if pos[1] != self.width:
-                se = self.grid[(pos[0]+1, pos[1]+1)]
+                se = self.grid[(pos[0] + 1, pos[1] + 1)]
 
         if not immediate:
             slot_neighbors = {
