@@ -21,8 +21,11 @@ class Grid:
     def getGrid(self):
         return self.grid
 
-    def getExtra(self):
-        return self.extra
+    def getExtra(self, key):
+        if key is None:
+            return self.extra
+        else:
+            return self.extra[key]
 
     def setExtra(self, key, value):
         self.extra[key] = value
