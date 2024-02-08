@@ -38,6 +38,7 @@ class Grid:
 
     def display_cells(self, cell_character_dict: dict, show_column: bool = False, show_row: bool = False):
         line = ''
+        line_count = 0
         if show_row:
             screen = 'x|'
             line_count = 1
@@ -48,7 +49,6 @@ class Grid:
             for i in range(self.width):
                 if num >= 10:
                     num = 0
-                if show_row:
                     screen += str(num) + ' '
 
             num += 1
