@@ -21,7 +21,7 @@ class Grid:
     def getGrid(self):
         return self.grid
 
-    def getExtra(self, key):
+    def getExtra(self, key=None):
         if key is None:
             return self.extra
         else:
@@ -36,16 +36,21 @@ class Grid:
     def copy_grid(self):
         return copy.copy(self.grid)
 
-    def display_cells(self, cell_character_dict: dict):
+    def display_cells(self, cell_character_dict: dict, show_column: bool = False, show_row: bool = False):
         line = ''
-        screen = 'x|'
-        line_count = 1
+        if show_row:
+            screen = 'x|'
+            line_count = 1
+        else:
+            screen = ''
         num = 1
+        if show_column:
+            for i in range(self.width):
+                if num >= 10:
+                    num = 0
+                if show_row:
+                    screen += str(num) + ' '
 
-        for i in range(self.width):
-            if num >= 10:
-                num = 0
-            screen += str(num) + ' '
             num += 1
 
         for cell in self.grid.values():
@@ -54,16 +59,19 @@ class Grid:
                     line += cell_character_dict[value] + ' '
 
             if (len(line) / 2) % self.width == 0:
-                if line_count >= 10:
-                    line_count = 0
-                screen += ' \n' + str(line_count) + '|' + line
-                line_count += 1
+                if show_row:
+                    if line_count >= 10:
+                        line_count = 0
+                    screen += ' \n' + str(line_count) + '|' + line
+                    line_count += 1
+                else:
+                    screen += line
                 line = ''
 
         os.system('clear')
         print(f'{screen}\n')
 
-    def getNeighbors(self, item_pos_tuple, immediate):
+    def getNeighbors(self, item_pos_tuple: tuple, immediate=False):
         pos = item_pos_tuple
         nw, n, ne, w, e, sw, s, se = None, None, None, None, None, None, None, None
 
