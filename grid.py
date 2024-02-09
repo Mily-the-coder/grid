@@ -68,7 +68,7 @@ class Grid:
                     screen += line
                 line = ''
 
-        os.system('clear')
+        os.system('clear||cls')
         print(f'{screen}\n')
 
     def getNeighbors(self, item_pos_tuple: tuple, immediate=False):
