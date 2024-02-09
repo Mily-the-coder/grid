@@ -43,11 +43,11 @@ class Grid:
     def copy_grid(self):
         return copy.copy(self.grid)
 
-    def display_cells(self, cell_character_dict: dict, show_column: bool = False, show_row: bool = False):
+    def display_cells(self, cell_character_dict: dict, show_row: bool = False, show_column: bool = False):
         line = ''
         line_count = 0
         if show_row:
-            screen = 'x|'
+            screen = '0|'
             line_count = 1
         else:
             screen = ''
@@ -56,9 +56,8 @@ class Grid:
             for i in range(self.width):
                 if num >= 10:
                     num = 0
-                    screen += str(num) + ' '
-
-            num += 1
+                screen += str(num) + ' '
+                num += 1
 
         for cell in self.grid.values():
             for value in cell_character_dict.keys():
