@@ -1,5 +1,12 @@
 import copy
 import os
+import sys
+
+match sys.platform:
+    case 'linux':
+        clear_command = 'clear'
+    case 'win32':
+        clear_command = 'cls'
 
 
 class Grid:
@@ -68,7 +75,7 @@ class Grid:
                     screen += line
                 line = ''
 
-        os.system('clear||cls')
+        os.system(clear_command)
         print(f'{screen}\n')
 
     def getNeighbors(self, item_pos_tuple: tuple, immediate=False):
