@@ -72,7 +72,7 @@ class Grid:
                     screen += ' \n' + str(line_count) + '|' + line
                     line_count += 1
                 else:
-                    screen += line
+                    screen += ' \n' + line
                 line = ''
 
         os.system(clear_command)
