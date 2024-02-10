@@ -77,7 +77,7 @@ class Grid:
         os.system(clear_command)
         print(f'{screen}\n')
 
-    def getNeighbors(self, item_pos_tuple: tuple, immediate=False):
+    def get_neighbors(self, item_pos_tuple: tuple, immediate: bool = False):
         pos = item_pos_tuple
         nw, n, ne, w, e, sw, s, se = None, None, None, None, None, None, None, None
 
