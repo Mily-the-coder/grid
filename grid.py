@@ -43,7 +43,7 @@ class Grid:
     def copyGrid(self):
         return copy.copy(self.grid)
 
-    def displayCells(self, cell_character_dict: dict, show_row: bool = False, show_column: bool = False):
+    def displayCells(self, cell_character_dict: dict, show_row: bool, show_column: bool):
         line = ''
         line_count = 0
         if show_row:
