@@ -40,10 +40,10 @@ class Grid:
     def getCell(self, item_pos_tuple):
         return self.grid[item_pos_tuple]
 
-    def copy_grid(self):
+    def copyGrid(self):
         return copy.copy(self.grid)
 
-    def display_cells(self, cell_character_dict: dict, show_row: bool = False, show_column: bool = False):
+    def displayCells(self, cell_character_dict: dict, show_row: bool = False, show_column: bool = False):
         line = ''
         line_count = 0
         if show_row:
@@ -77,7 +77,7 @@ class Grid:
         os.system(clear_command)
         print(f'{screen}\n')
 
-    def get_neighbors(self, item_pos_tuple: tuple, immediate: bool = False):
+    def getNeighbors(self, item_pos_tuple: tuple, immediate: bool = False):
         pos = item_pos_tuple
         nw, n, ne, w, e, sw, s, se = None, None, None, None, None, None, None, None
 
