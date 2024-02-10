@@ -10,7 +10,7 @@ match sys.platform:
 
 
 class Grid:
-    def __init__(self, width: int, height: int, default: int):
+    def __init__(self, width: int, height: int, default: any):
         self.width = width
         self.height = height
         self.default = default
